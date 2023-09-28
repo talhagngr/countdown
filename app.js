@@ -1,6 +1,6 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const countdownElement = document.getElementById('countdown');
-    const targetDate = new Date('2023-05-19');
+    const targetDate = new Date('2023-05-19T00:00:00');
     const currentDate = new Date();
     
     if (currentDate < targetDate) {
