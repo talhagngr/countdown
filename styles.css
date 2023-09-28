@@ -1,4 +1,4 @@
-#app {
+#app, #timerContainer {
     width: 300px;
     margin: auto;
     text-align: center;
@@ -6,12 +6,17 @@
     box-shadow: 0px 0px 10px 0px #000000;
 }
 
-button {
+#countdown, #timerText {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+button, #checkButton {
     padding: 10px;
     cursor: pointer;
 }
 
-#countdown {
-    margin-top: 20px;
-    font-size: 20px;
+#checkButton {
+    padding: 10px 20px;
+    font-size: 16px;
 }
