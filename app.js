@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Existing code for the countdown.
+    // Existing code for the countdown. 
     const countdownElement = document.getElementById('countdown');
     const targetDate = new Date('2023-05-19T00:00:00');
     const currentDate = new Date();
