@@ -1,17 +1,13 @@
-function setDate() {
-    const inputElement = document.getElementById('dateInput');
+document.addEventListener('DOMContentLoaded', function() {
     const countdownElement = document.getElementById('countdown');
-    const selectedDate = new Date(inputElement.value);
+    const targetDate = new Date('2023-05-19');
     const currentDate = new Date();
     
-    const diffTime = selectedDate - currentDate;
-    if(diffTime > 0) {
-        // Future Date
-        const days = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-        countdownElement.innerHTML = days + ' days until ' + selectedDate.toDateString();
+    if (currentDate < targetDate) {
+        countdownElement.innerHTML = 'The target date has not arrived yet.';
     } else {
-        // Past Date
-        const days = Math.floor(Math.abs(diffTime) / (1000 * 60 * 60 * 24));
-        countdownElement.innerHTML = days + ' days since ' + selectedDate.toDateString();
+        const diffTime = currentDate - targetDate;
+        const days = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+        countdownElement.innerHTML = days + ' days have passed since 19 May 2023.';
     }
-}
+});
