@@ -1,5 +1,5 @@
 function setDate() {
-    const inputElement = document.getElementById(2023-05-19);
+    const inputElement = document.getElementById('dateInput');
     const countdownElement = document.getElementById('countdown');
     const selectedDate = new Date(inputElement.value);
     const currentDate = new Date();
