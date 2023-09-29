@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const lastPressedStr = localStorage.getItem('lastPressed') || '';
         const consecutiveDays = localStorage.getItem('consecutiveDays') || '0';
 
-        timerText.innerHTML = `Timer: ${consecutiveDays} days`;
+        timerText.innerHTML = `Consecutive days worked: ${consecutiveDays} days`;
         indicator.className = todayStr === lastPressedStr ? 'green' : 'red';
     }
 
