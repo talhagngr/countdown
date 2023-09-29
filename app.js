@@ -15,34 +15,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const checkButton = document.getElementById('checkButton');
     const timerText = document.getElementById('timerText');
 
+    // When checkButton is clicked, increment consecutiveDays in Local Storage.
     checkButton.addEventListener('click', function() {
-        const currentDate = new Date();
-        currentDate.setHours(0, 0, 0, 0); // Reset time to 00:00:00
-        localStorage.setItem('lastChecked', currentDate.toString());
+        let consecutiveDays = parseInt(localStorage.getItem('consecutiveDays') || 0);
+        consecutiveDays++;
+        localStorage.setItem('consecutiveDays', consecutiveDays.toString());
         updateTimerText();
     });
 
-        function updateTimerText() {
-        const lastChecked = new Date(localStorage.getItem('lastChecked') || 0);
-        lastChecked.setHours(0, 0, 0, 0); // Reset time to 00:00:00
-
-        const today = new Date();
-        today.setHours(0, 0, 0, 0); // Reset time to 00:00:00
-
-        const dayDifference = (today - lastChecked) / (1000 * 60 * 60 * 24);
-
-        if (dayDifference < 1) {
-            timerText.innerHTML = `Timer: ${localStorage.getItem('consecutiveDays') || 0} days`;
-        } else if (dayDifference === 1) {
-            let consecutiveDays = (localStorage.getItem('consecutiveDays') || 0);
-            consecutiveDays = parseInt(consecutiveDays) + 1;
-            localStorage.setItem('consecutiveDays', consecutiveDays.toString());
-            timerText.innerHTML = `Timer: ${consecutiveDays} days`;
-        } else {
-            localStorage.setItem('consecutiveDays', '0');
-            timerText.innerHTML = 'Timer: 0 days';
-        }
+    function updateTimerText() {
+        const consecutiveDays = localStorage.getItem('consecutiveDays') || 0;
+        timerText.innerHTML = `Timer: ${consecutiveDays} days`;
     }
-
     updateTimerText(); // Run this function once when the page loads to set initial text.
 });
