@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Existing code for the countdown. 
     const countdownElement = document.getElementById('countdown');
     const targetDate = new Date('2023-05-19T00:00:00');
     const currentDate = new Date();
@@ -15,23 +14,26 @@ document.addEventListener('DOMContentLoaded', function() {
     // New code for timer with check button
     const checkButton = document.getElementById('checkButton');
     const timerText = document.getElementById('timerText');
-    const currentDateStr = currentDate.toDateString(); // Get current Date as String
+    const currentDateStr = new Date().toDateString(); // Get current Date as String
    
-    // When checkButton is clicked, set lastChecked to currentDate in Local Storage.
-    checkButton.addEventListener('click', function() {
+    // When checkButton is clicked, set lastChecked and timerStartDate in Local Storage.
+    checkButton.addEventListener('click', function () {
+        if (!localStorage.getItem('timerStartDate')) {
+            localStorage.setItem('timerStartDate', currentDateStr);
+        }
         localStorage.setItem('lastChecked', currentDateStr);
         updateTimerText();
     });
 
     function updateTimerText() {
         const lastChecked = localStorage.getItem('lastChecked');
-        if(lastChecked === currentDateStr) {
+        if (lastChecked === currentDateStr) {
             const timerStartDate = new Date(localStorage.getItem('timerStartDate'));
             const elapsedDays = Math.floor((new Date() - timerStartDate) / (1000 * 60 * 60 * 24));
             timerText.innerHTML = `Timer: ${elapsedDays} days`;
         } else {
-            // Reset timer if not checked in today.
-            localStorage.setItem('timerStartDate', currentDate.toString());
+            // Reset timer if not checked today.
+            localStorage.setItem('timerStartDate', currentDateStr);
             localStorage.removeItem('lastChecked');
             timerText.innerHTML = 'Timer: 0 days';
         }
