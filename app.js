@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         countdownElement.innerHTML = days + ' days have passed since 19 May 2023.';
     }
 
-    const checkButton = document.getElementById('checkButton');
+        const checkButton = document.getElementById('checkButton');
         const timerText = document.getElementById('timerText');
         const indicator = document.getElementById('indicator');
 
