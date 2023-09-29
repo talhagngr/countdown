@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     const countdownElement = document.getElementById('countdown');
     const targetDate = new Date('2023-05-19T00:00:00');
     const currentDate = new Date();
@@ -11,12 +11,11 @@ document.addEventListener('DOMContentLoaded', function () {
         countdownElement.innerHTML = days + ' days have passed since 19 May 2023.';
     }
 
-    // Elements and Event Listener for Timer
     const checkButton = document.getElementById('checkButton');
     const timerText = document.getElementById('timerText');
-    const indicator = document.getElementById('indicator'); // Make sure this element exists in your HTML
+    const indicator = document.getElementById('indicator');
 
-    checkButton.addEventListener('click', function () {
+    checkButton.addEventListener('click', function() {
         const todayStr = new Date().toDateString();
         const lastPressedStr = localStorage.getItem('lastPressed') || '';
 
@@ -35,9 +34,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const lastPressedStr = localStorage.getItem('lastPressed') || '';
         const consecutiveDays = localStorage.getItem('consecutiveDays') || '0';
 
-        timerText.innerHTML = `Timer: ${consecutiveDays} day${consecutiveDays !== '1' ? 's' : ''}`;
-        indicator.className = todayStr === lastPressedStr ? 'green' : 'red'; // Update the indicator color
+        timerText.innerHTML = `Timer: ${consecutiveDays} days`;
+        indicator.className = todayStr === lastPressedStr ? 'green' : 'red';
     }
 
-    updateUI(); // Run this function once when the page loads to set the initial state.
+    updateUI(); // Run this function once when the page loads to set initial state.
 });
