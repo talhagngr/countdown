@@ -17,6 +17,7 @@ button, #checkButton {
 }
 
 #checkButton {
+    margin-top: 10px;
     padding: 10px 20px;
     font-size: 16px;
 }
@@ -30,12 +31,14 @@ button, #checkButton {
 }
 
 #contentContainer {
+    text-align: center;
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
 #indicator {
+    margin: 10px auto;
     border: 1px solid #ccc; /* Example: Apply a border to the indicator */
     display: inline-block; /* This makes the element inline but retains box-model properties */
     vertical-align: middle; /* This centers the indicator vertically relative to adjacent elements */
