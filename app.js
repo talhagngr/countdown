@@ -14,27 +14,32 @@ document.addEventListener('DOMContentLoaded', function() {
     // New code for timer with check button
     const checkButton = document.getElementById('checkButton');
     const timerText = document.getElementById('timerText');
-    const currentDateStr = new Date().toDateString(); // Get current Date as String
-   
-    // When checkButton is clicked, set lastChecked and timerStartDate in Local Storage.
-    checkButton.addEventListener('click', function () {
-        if (!localStorage.getItem('timerStartDate')) {
-            localStorage.setItem('timerStartDate', currentDateStr);
-        }
-        localStorage.setItem('lastChecked', currentDateStr);
+
+    checkButton.addEventListener('click', function() {
+        const currentDate = new Date();
+        currentDate.setHours(0, 0, 0, 0); // Reset time to 00:00:00
+        localStorage.setItem('lastChecked', currentDate.toString());
         updateTimerText();
     });
 
-    function updateTimerText() {
-        const lastChecked = localStorage.getItem('lastChecked');
-        if (lastChecked === currentDateStr) {
-            const timerStartDate = new Date(localStorage.getItem('timerStartDate'));
-            const elapsedDays = Math.floor((new Date() - timerStartDate) / (1000 * 60 * 60 * 24));
-            timerText.innerHTML = `Timer: ${elapsedDays} days`;
+        function updateTimerText() {
+        const lastChecked = new Date(localStorage.getItem('lastChecked') || 0);
+        lastChecked.setHours(0, 0, 0, 0); // Reset time to 00:00:00
+
+        const today = new Date();
+        today.setHours(0, 0, 0, 0); // Reset time to 00:00:00
+
+        const dayDifference = (today - lastChecked) / (1000 * 60 * 60 * 24);
+
+        if (dayDifference < 1) {
+            timerText.innerHTML = `Timer: ${localStorage.getItem('consecutiveDays') || 0} days`;
+        } else if (dayDifference === 1) {
+            let consecutiveDays = (localStorage.getItem('consecutiveDays') || 0);
+            consecutiveDays = parseInt(consecutiveDays) + 1;
+            localStorage.setItem('consecutiveDays', consecutiveDays.toString());
+            timerText.innerHTML = `Timer: ${consecutiveDays} days`;
         } else {
-            // Reset timer if not checked today.
-            localStorage.setItem('timerStartDate', currentDateStr);
-            localStorage.removeItem('lastChecked');
+            localStorage.setItem('consecutiveDays', '0');
             timerText.innerHTML = 'Timer: 0 days';
         }
     }
