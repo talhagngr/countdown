@@ -26,6 +26,13 @@ button, #checkButton {
     align-items: center;
     justify-content: center;
     gap: 10px;
+    margin-top: 20px; /* This provides space between #timerContainer and the preceding element */
+}
+
+#indicator {
+    border: 1px solid #ccc; /* Example: Apply a border to the indicator */
+    display: inline-block; /* This makes the element inline but retains box-model properties */
+    vertical-align: middle; /* This centers the indicator vertically relative to adjacent elements */
 }
 
 .green {
@@ -33,8 +40,6 @@ button, #checkButton {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    display: inline-block;
-    vertical-align: middle;
 }
 
 .red {
@@ -42,6 +47,4 @@ button, #checkButton {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    display: inline-block;
-    vertical-align: middle;
 }
