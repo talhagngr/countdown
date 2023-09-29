@@ -4,6 +4,20 @@
     <meta charset="UTF-8">
     <title>Countdown App</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        #indicator {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .red {
+            background-color: red;
+        }
+        .green {
+            background-color: green;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
@@ -14,6 +28,7 @@
     <div id="timerContainer">
         <div id="timerText"></div>
         <button id="checkButton">Check In</button>
+        <div id="indicator"></div>
     </div>
     
     <script src="app.js"></script>
