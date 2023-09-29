@@ -29,6 +29,12 @@ button, #checkButton {
     margin-top: 20px; /* This provides space between #timerContainer and the preceding element */
 }
 
+#contentContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 #indicator {
     border: 1px solid #ccc; /* Example: Apply a border to the indicator */
     display: inline-block; /* This makes the element inline but retains box-model properties */
