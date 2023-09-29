@@ -21,18 +21,27 @@ button, #checkButton {
     font-size: 16px;
 }
 
-#indicator {
-    width: 20px;
-    height: 20px;
-    background-color: red;
-    border-radius: 50%;
-    margin: 10px auto;
+#timerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
 .green {
-    background-color: green;
+    background-color: limegreen;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .red {
     background-color: red;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
 }
