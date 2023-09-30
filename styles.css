@@ -4,6 +4,7 @@
     text-align: center;
     padding: 20px;
     box-shadow: 0px 0px 10px 0px #000000;
+    margin-top: 20px; /* Separation between countdown and timer container */
 }
 
 #countdown, #timerText {
@@ -11,50 +12,32 @@
     font-size: 20px;
 }
 
-button, #checkButton {
-    padding: 10px;
-    cursor: pointer;
-}
-
 #checkButton {
-    display: block;
-    margin-top: 10px;
     padding: 10px 20px;
     font-size: 16px;
+    margin-top: 10px; /* Added margin-top for spacing between button and the indicator */
+    display: block; /* Making it a block element to ensure it comes below the indicator */
 }
 
 #timerContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px; /* This provides space between #timerContainer and the preceding element */
-}
-
-#contentContainer {
-    text-align: center;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    margin-top: 20px;
 }
 
 #indicator {
-    margin: 10px auto;
-    border: 1px solid #ccc; /* Example: Apply a border to the indicator */
-    display: inline-block; /* This makes the element inline but retains box-model properties */
-    vertical-align: middle; /* This centers the indicator vertically relative to adjacent elements */
+    margin-top: 10px; /* Added margin-top for spacing between the indicator and the text */
+    width: 20px;
+    height: 20px;
+    display: block; /* Making it a block element to ensure it comes below the text */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .green {
     background-color: limegreen;
-    width: 20px;
-    height: 20px;
     border-radius: 50%;
 }
 
 .red {
     background-color: red;
-    width: 20px;
-    height: 20px;
     border-radius: 50%;
 }
