@@ -3,6 +3,7 @@ body {
 }
 
 #app, #timerContainer {
+    background-color: #FF7B7B;
     width: 300px;
     margin: auto;
     text-align: center;
