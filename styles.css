@@ -1,3 +1,7 @@
+body {
+    background-color: #f4f4f4; /* Example: Set a background color to the whole page */
+}
+
 #app, #timerContainer {
     width: 300px;
     margin: auto;
