@@ -15,10 +15,8 @@
 #checkButton {
     padding: 10px 20px;
     font-size: 16px;
-    margin-top: 10px; /* Added margin-top for spacing between button and the indicator */
     display: block; /* Making it a block element to ensure it comes below the indicator */
-    margin-left: auto;
-    margin-right: auto;
+    margin: 10px auto;
 }
 
 #timerContainer {
@@ -26,12 +24,10 @@
 }
 
 #indicator {
-    margin-top: 10px; /* Added margin-top for spacing between the indicator and the text */
     width: 20px;
     height: 20px;
     display: block; /* Making it a block element to ensure it comes below the text */
-    margin-left: auto;
-    margin-right: auto;
+    margin: 10px auto;
 }
 
 .green {
